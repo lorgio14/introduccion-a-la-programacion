@@ -1,0 +1,40 @@
+
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.  												                          */
+/* fecha:  12/07/13															                              */
+/* descripcion:  calcula el area de un triangulo, basado en la base y altura  */
+/* entrada: base y altura													                            */
+/* salida: area															                              	  */
+/******************************************************************************/
+
+ 
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+
+
+void main()
+{float base, altura, area;
+ printf("\t calculo del area del triangulo \n");
+ printf("\t ============================== \n\n\n");
+ printf("\n\nIngrese la base: ");
+ scanf("%f",&base);
+ printf("\n\nIngrese la altura: ");
+ scanf("%f",&altura);
+ if((base>0) && (altura>0))
+   {
+	//calcula el area
+    area = (base*altura)/2;
+    printf("el area es %f",area);
+   }
+  else
+   {
+	printf("\n\nERROR: La Base, La Altura o Ambos es menor a 0");
+   }
+ getch();
+
+ 
+}
+
