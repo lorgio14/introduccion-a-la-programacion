@@ -1,0 +1,37 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.  												                          */
+/* fecha:  12/07/13															                              */
+/* descripcion:  calcula el area de un cuadrado                               */
+/* entrada: base y altura													                            */
+/* salida: area																                                */
+/******************************************************************************/
+
+ 
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+
+
+
+void main()
+{float lado,area;
+ printf("\t calculo del area del cuadrado \n");
+ printf("\t ============================= \n\n\n");
+ printf("\n\nIngrese el lado: ");
+ scanf("%f",&lado);
+ if(lado>0)
+   {
+	//calcula el area
+    area = lado*lado;
+    printf("el area es %f",area);
+   }
+  else
+   {
+	printf("\n\nERROR: El lado es menor a 0");
+   }
+ getch();
+
+ 
+}
