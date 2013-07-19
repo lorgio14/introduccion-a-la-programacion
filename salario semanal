@@ -1,0 +1,44 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.  												                          */
+/* fecha:  19/07/13															                              */
+/* descripcion:  calcula salario semanal de trabajadores                      */
+/* entrada: obreros, horas													                          */
+/* salida: salario semanal													                          */
+/******************************************************************************/
+
+
+
+
+
+
+#include "stdafx.h"
+#include "stdlib.h"
+#include "stdio.h"
+
+
+
+
+void main()
+{int obreros, i;
+ float horas, salario, aux;
+ printf("\n introducir numero de obreros:  ");
+ scanf("%d",&obreros);
+
+ for(i=0;i<obreros;i++)
+	{printf("\n introducir horas trabajadas:  ");
+	 scanf("%f",&horas);
+	 if(horas>=40)
+	   {horas=horas-40;
+	    salario=(horas*25)+800;
+		aux=aux+salario;
+       }
+	  else
+	   {salario=horas*20;
+	    aux=aux+salario;
+	   }
+     printf("\n el salario es: %f ",salario);
+	}
+  printf("\n\n la suma total de los salarios es: %f ",aux);
+  system("\npause");
+}
