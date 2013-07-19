@@ -1,0 +1,35 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion.                                   */  
+/* nombre: Lorgio Campos S.  											                        	  */
+/* fecha:  19/07/13															                              */
+/* descripcion:  calcula la velocidad.										                    */
+/* entrada: distancia, tiempo.												                        */
+/* salida: velocidad														                              */
+/******************************************************************************/
+
+ 
+
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+
+void main()
+{float velocidad, distancia, tiempo;
+printf("ingrese la distancia: ");
+scanf("%f",&distancia);
+printf("ingrese el tiempo: ");
+scanf("%f",&tiempo);
+if((distancia>0)&&(tiempo>0))//no hay tiempo y distancias negativas
+  {velocidad=distancia/tiempo;
+   printf("la velocidad es %f",velocidad);
+  }
+ else
+  {printf("error: no se aceptan numeros negativos");
+  }
+printf("\n\n");
+system("pause");
+}
