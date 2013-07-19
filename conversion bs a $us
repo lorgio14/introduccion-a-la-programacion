@@ -1,0 +1,34 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion.                                   */  
+/* nombre: Lorgio Campos S.  												                          */
+/* fecha:  19/07/13															                              */
+/* descripcion:  conversion de Bs. a $us									                    */
+/* entrada: bolivianos														                            */
+/* salida: dolares															                              */
+/******************************************************************************/
+
+ 
+
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+
+void main()
+{float monto, dolares ;
+printf("\n\n ingrese el monto en bolivianos (Bs.): ");
+scanf("%f",&monto);
+
+if(monto>=0)
+  {dolares = monto/6.96;
+   printf("\n\n el monto convertido en dolares ($us) es: %f",dolares);
+  }
+ else
+  {printf("\n\n error: no se aceptan numeros negativos");
+  }
+printf("\n\n");
+system("pause");
+}
