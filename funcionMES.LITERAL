@@ -1,0 +1,89 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  convierte el mes de una fecha en literal								    	*/
+/* entrada: dia,mes,año													                              */
+/* salida: dia,mes(literal),año												                     	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+void lit(int d, int m, int a);
+
+void main()
+{int d,m,a,z;
+printf("ingrese dia: ");
+ scanf("%d",&d);
+ printf("ingrese mes: ");
+ scanf("%d",&m);
+ printf("ingrese ano: ");
+ scanf("%d",&a);
+
+ lit(d,m,a);
+ printf("\n\n");
+ system("pause");
+
+}
+
+void lit(int d, int m, int a)
+	{if(m==1)
+		{printf("%d enero %d",d,a);
+		}
+	else
+		{if(m==2)
+			{printf("%d febrero %d",d,a);
+			}
+		else
+			{if(m==3)
+				{printf("%d marzo %d",d,a);
+				}
+			else
+				{if(m==4)
+					{printf("%d abril %d",d,a);	
+					}
+				else
+					{if(m==5)
+						{printf("%d mayo %d",d,a);
+						}
+					else
+						{if(m==6)
+							{printf("%d junio %d",d,a);
+							}
+						else
+							{if(m==7)
+								{printf("%d julio %d",d,a);
+								}
+							else
+								{if(m==8)
+									{printf("%d agosto %d",d,a);
+									}
+								else
+									{if(m==9)
+										{printf("%d septimbre %d",d,a);
+										}
+									else
+										{if(m==10)
+											{printf("%d octubre %d",d,a);
+											}
+										else
+											{if(m==11)
+												{printf("%d noviembre %d",d,a);
+												}
+											else
+												{printf("%d diciembre %d",d,a);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
