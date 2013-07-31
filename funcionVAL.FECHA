@@ -1,0 +1,72 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  valida una fecha dada en día, mes y año.							      	*/
+/* entrada: dia,mes,año											                                  */
+/* salida: validacion										                              	      */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h" 
+
+void leer(int &d, int &m, int &a);
+
+void main()
+{int d,m,a;
+ leer(d,m,a);
+
+ system("pause");
+
+}
+void leer(int &d, int &m, int &a)
+{bool sw;
+ do
+	{printf("ingrese el ano: ");
+	 scanf("%d",&a);
+	}while(a<1);
+
+ do
+	{printf("ingrese el mes: ");
+	 scanf("%d",&m);
+	}while(m<1 || m>12);
+
+	sw=true;
+
+ do
+	{printf("ingrese el dia: ");
+	 scanf("%d",&d);
+
+	 switch(d)
+	 {case 31:
+		if(((m==1)||(m==3)||(m==5)||(m==7)||(m==8)||(m==10)||(m==12)))
+			sw=false;
+			break;
+
+	  case 30:
+		if(((m==4)||(m==6)||(m==9)||(m==11)))
+			sw=false;
+			break;
+
+	  case 29:
+		if(((m==2)&&(a%4==0)))
+			sw=false;
+			break;
+
+	  case 28:
+		if(((m==2)&&(a%4!=0)))
+			sw=false;
+			break;
+	  default :
+			if((d>=1)&&(d<=27))  
+		    sw=false;
+			  break;
+
+	 }
+
+
+	}while(sw==true);
+
+}
+ 
