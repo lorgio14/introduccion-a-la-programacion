@@ -1,0 +1,36 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula la suma de la serie									                */
+/* entrada: base, exponente													                          */
+/* salida: sumatoria												                              	  */
+/******************************************************************************/
+
+ 
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+#include "math.h"
+
+void main()
+{
+	int   n, factorial,i,j;
+	float suma, x; 
+	suma = 1;
+	printf("Introduzca numero de la serie a seguir:");
+	scanf("%d",&n);
+	printf("Introduzca x :  ");
+	scanf("%f",&x);
+	for (i = 2 ; i <= n; i++)
+	{
+		factorial = 1;
+		for (j = 1 ; j <= (2*i-2);j++)
+			factorial = factorial * j;
+
+		suma = suma + pow (x,2*i-1)/factorial;
+	}
+ printf("\n La suma de la serie es:%f",suma);
+ _getch();
+}
