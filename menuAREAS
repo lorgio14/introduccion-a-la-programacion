@@ -1,0 +1,91 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  26/07/13															                              */
+/* descripcion:  calcula area de triangulo,cuadrado,circunferencia						*/
+/* entrada: base,altura o lado o radio											                  */
+/* salida: area										                                        	  */
+/******************************************************************************/
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+float area_triangulo(float base, float altura);
+float area_cuadrado(float lado);
+float area_circunferencia(float radio);
+
+
+void main()
+{int opcion;
+ float base,altura,radio,lado,t,c,r;
+ system("color e4");
+
+ do
+ {
+
+ printf("\n***********MENU***********\n");
+ printf("==========================\n");
+ printf("0.- SALIR\n");
+ printf("1.- Area del triangulo\n"); 
+ printf("2.- Area del cuadrado\n");
+ printf("3.- Area de la circunferencia\n");
+ printf("ingrese una opcion: ");
+ scanf("%d",&opcion);
+
+ switch (opcion)
+ {	case 1:
+		printf("ingrese la base: ");
+		scanf("%f",&base);
+		printf("ingrese la altura: ");
+		scanf("%f",&altura);
+		t=area_triangulo(base,altura);
+		printf("el area del triangulo es: %f\n",t);
+
+		break;
+
+	case 2:
+		printf("ingrese lado: ");
+		scanf("%f",&lado);
+		c=area_cuadrado(lado);
+		printf("el area del cuadrado es: %f\n",c);
+		break;
+
+	case 3:
+		printf("ingrese radio: ");
+		scanf("%f",&radio);
+		r=area_circunferencia(radio);
+		printf("el area de la circunferencia es: %f\n",r);
+	    break;
+
+	case 0:
+		break;
+
+	default:
+		printf("opcion no valida\n");
+		
+	}
+
+ }while(opcion!=0);
+ printf("\n\n");
+ system("pause");
+}
+
+float area_triangulo(float base, float altura)
+{float area;
+ area=(base*altura)/(2);
+ return(area);
+}
+
+float area_cuadrado(float lado)
+{float area;
+ area=(lado*lado);
+ return(area);
+}
+
+float area_circunferencia(float radio)
+{float area, pi=3.1416;
+ area=(pi*radio*radio);
+ return(area);
+}
