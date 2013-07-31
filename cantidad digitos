@@ -1,0 +1,35 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  23/07/13															                              */
+/* descripcion:  calcula cantidad digitos de un numero								        */
+/* entrada: numero											                                      */
+/* salida: cantidad de digitos 									                          	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+
+
+void main()
+{
+ int numero, contador, digitos, a;
+
+  digitos=0;
+
+  printf("\n introducir un numero positivo: ");
+ scanf("%d",&numero);
+
+ while(numero>0)
+	{a=numero%10;
+	  numero=numero/10;
+	  digitos=digitos+1;
+	}
+
+  printf("\n el numero tiene %d digitos",digitos);
+  printf("\n\n");
+  system("pause");
+}
