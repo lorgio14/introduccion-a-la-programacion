@@ -1,0 +1,44 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula el sistema de ecuaciones con dos variables						*/
+/* entrada: coeficientes A,B,C,D,E,F													                */
+/* salida: X,Y												                              	        */
+/******************************************************************************/
+
+ 
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+
+void sistEc(float a,float b,float c,float d,float e,float f,float &x,float &y);
+
+void main (void)
+{
+	float a,b,c,d,e,f,x,y;
+	do 
+	{
+		printf("Ingrese el coeficiente a : ");
+		scanf("%f",&a);
+		printf("Ingrese el coeficiente b : ");
+		scanf("%f",&b);
+		printf("Ingrese el coeficiente c : ");
+		scanf("%f",&c);
+		printf("Ingrese el coeficiente d : ");
+		scanf("%f",&d);
+		printf("Ingrese el coeficiente e : ");
+		scanf("%f",&e);
+		printf("Ingrese el coeficiente f : ");
+		scanf("%f",&f);
+	}while(b*d == a*e);
+	sistEc(a,b,c,d,e,f,x,y);
+	printf("La solucion del sistema es x : %f \ny : %f ",x,y);
+	_getch();
+}
+
+void sistEc(float a,float b,float c,float d,float e,float f,float &x,float &y)
+{
+	x = float(( c*e - b*f )/ ( b*d - a*e ));
+	y = float(( a*f - c*d )/ ( b*d - a*e ));
+}
