@@ -1,0 +1,39 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  23/07/13															                              */
+/* descripcion:  calcula cuantos y cuales son digitos pares de un numero			*/
+/* entrada: numero											                                      */
+/* salida: digitos, cantidad de digitos pares								               	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+
+
+
+void main()
+{
+ int numero, contador, digitos, a;
+
+ contador=0, digitos=0;
+
+ printf("\n introducir un numero positivo");
+ scanf("%d",&numero);
+
+ while(numero>0)
+	{a=numero%10;
+	 if(a%2==0)
+	   {printf("\n el digito %d es positivo",a);
+		contador=contador+1;
+	   }
+	  numero=numero/10;
+	  digitos=digitos+1;
+	}
+  printf("\n %d digitos son pares",contador);
+  printf("\n el numero tiene %d digitos",digitos);
+
+  system("\n\n pause");
+}
