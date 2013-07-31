@@ -1,0 +1,50 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  días transcurridos entre dos fechas cualesquiera							*/
+/* entrada: fecha1,fecha2											                                */
+/* salida: dias transcurridos										                           	  */
+/******************************************************************************/
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+int calculo(int d1,int m1,int a1,int d2,int m2,int a2);
+
+void main()
+{int d1,m1,a1,d2,m2,a2,dia;
+ printf("ingrese primera fecha:\n");
+ printf("ingrese dia,mes,ano:\n");
+ scanf("%d",&d1);
+ scanf("%d",&m1);
+ scanf("%d",&a1);
+ printf("ingrese segunda fecha:\n");
+ printf("ingrese dia,mes,ano;\n");
+ scanf("%d",&d2);
+ scanf("%d",&m2);
+ scanf("%d",&a2);
+
+ dia=calculo(d1,m1,a1,d2,m2,a2);
+ printf("%d",dia);
+ system("pause");
+}
+int calculo(int d1,int m1,int a1,int d2,int m2,int a2)
+{int d,m,a,dias;
+	if(d2<d1)
+	{m2=m2-1;
+	 d2=d2+30;
+	}
+ d=d2-d1;
+ if(m2<m1)
+   {a2=a2-1;
+	m2=m2+12;
+   }
+ m=m2-m1;
+ a=a2-a1;
+ dias = (a*365) + (m*30) + (d);
+ return(dias);
+}
+
