@@ -1,0 +1,55 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  23/07/13															                              */
+/* descripcion:  calcula segun la edad la categoria de un nadador							*/
+/* entrada: edad											                                        */
+/* salida: categoria										                              	      */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdlib.h"
+#include "stdio.h"
+
+void main()
+{int edad;
+ printf("ingrese la edad del nadador:  ");
+ scanf("%d",&edad);
+      if(edad>=5 && edad<=7)
+      {printf("\nel nadador se encuentra en la categoria INFANTIL A"); 
+	    }
+	  else
+	    {  if (edad>=8 && edad<=10)
+	         {printf("\nel nadador se encuentra en la categoria INFANTIL B");
+
+	         }
+		  else
+		  { if(edad>=11 && edad<=13)
+	        {printf("\nel nadador se encuentra en la categoria JUVENIL A");
+	        }
+		  else
+		  {    if(edad>=14 && edad<=17)
+	            {printf("\nel nadador se encuentra en la categoria JUVENIL B");
+	            }
+		     else
+			 { if(edad>=18 && edad<=60)
+	              {printf("\nel nadador se encuentra en la categoria ADULTO");
+	              }
+			   else
+			     { if(edad>=61 && edad<=100)
+	                {printf("\nel nadador se encuentra en la categoria SEÑOR");
+
+	                }
+				 else
+				   {printf("\nel nadador se encuentra fuera de categoria");
+	               }
+	             } 
+	         }
+	      }
+
+	      } 
+	   }
+
+system("pause");
+}
+
