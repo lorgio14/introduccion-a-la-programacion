@@ -1,0 +1,60 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula la ecuacion cuadratica								                */
+/* entrada: a,b,c													                                    */
+/* salida: x1,x2											                              	        */
+/******************************************************************************/
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+#include "math.h"
+
+void raizReal(float a,float b,float c,float &x1,float &x2);
+void raizImaginaria(float a,float b,float c,float &pr,float &pi);
+void main ()
+{
+	float a,b,c,pr,pi,x1,x2;
+	printf("\t\tECUACION CUADRATICA \n");
+	printf("\t\t===================\n\n");
+	do 
+	{
+		printf("ingrese a : ");
+		scanf_s("%f",&a);
+	}while (a == 0);
+	printf("ingrese b : ");
+	scanf_s("%f",&b);
+	printf("ingrese c : ");
+	scanf_s("%f",&c);
+	if(pow(b,2)- 4*a*c >= 0)
+	{
+		raizReal(a,b,c,x1,x2);
+		printf("X1 = %f ,\n X2 = %f ",x1,x2);
+	}
+	else
+	{
+		pr = 0.0;
+		pi = 0.0;
+		raizImaginaria(a,b,c,pr,pi);
+		printf("X1 = %f + %f i \n",pr,pi);
+		printf("X2 = %f - %f i ",pr,pi);
+	}
+	_getch();
+}
+void raizReal(float a,float b,float c,float &x1,float &x2)
+{
+	float discri;
+	discri = pow(b,2)- 4*a*c;
+	x1 = (-b + sqrt(discri))/ (2*a);
+	x2 = (-b - sqrt(discri))/ (2*a);
+}
+void raizImaginaria(float a,float b,float c,float &pr,float &pi)
+{
+	float discri;
+	discri = pow(b,2)- 4*a*c;
+	pr = -b / (2*a);
+	pi = sqrt(-discri)/ (2*a);
+}
