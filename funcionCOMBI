@@ -1,0 +1,42 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula valor numerico de un numero combinatorio							*/
+/* entrada: n,r													                                      */
+/* salida: numero combinatorio												                    	  */
+/******************************************************************************/
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+int factorial(int x);
+
+void main()
+{int n,r,x, combi;
+
+do
+{printf("ingrese numero: ");
+ scanf("%d",&n);
+ printf("ingrese numero: ");
+ scanf("%d",&r);
+}while(n<r);
+
+combi = factorial(n)/( factorial(n-r)  * factorial(r) );
+printf("la combinacion es: %d", combi);
+ 
+ system("pause");
+}
+
+int factorial(int x)
+{int i,f;
+ f=1;
+ for(i=1;i<=x;i++)
+ {
+ f=f*i;
+ }
+ return(f);
+}
+ 
