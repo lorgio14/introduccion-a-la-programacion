@@ -1,0 +1,84 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  convierte numero decimal a romano								            */
+/* entrada: numero decimal													                          */
+/* salida: numero romano											                             	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+
+void decimal_romano(int n);
+
+void main(void)
+{
+	int n;
+	do 
+	{
+		printf("Ingrese un numero a convertir : ");
+		scanf("%d",&n);
+
+	}while((n<1)||(n>100));
+	decimal_romano(n);
+	_getch();
+}
+
+void decimal_romano(int n)
+{
+	int dig;
+	if (n%100 == 0)
+		printf("C");
+	else 
+	{
+		dig = n % 10;
+		n = int (n /10);
+		switch (n)
+		{
+			case 1:	printf("X");
+					break;
+			case 2:	printf("XX");
+					break;
+			case 3:	printf("XXX");
+					break;
+			case 4:	printf("XL");
+					break;
+			case 5:	printf("L");
+					break;
+			case 6:	printf("LX");
+					break;
+			case 7:	printf("LXX");
+					break;
+			case 8:	printf("LXXX");
+					break;
+			case 9:	printf("XC");
+					break;
+		}
+		switch (dig)
+		{
+			case 1:	printf("I");
+					break;
+			case 2:	printf("II");
+					break;
+			case 3:	printf("III");
+					break;
+			case 4:	printf("IV");
+					break;
+			case 5:	printf("V");
+					break;
+			case 6:	printf("VI");
+					break;
+			case 7:	printf("VII");
+					break;
+			case 8:	printf("VIII");
+					break;
+			case 9:	printf("IX");
+					break;
+		}
+
+	}
+
+}
+ 
