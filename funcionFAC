@@ -1,0 +1,38 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula el factorial de un numero                            */
+/* entrada: numero													                                  */
+/* salida: factorial															                         	  */
+/******************************************************************************/
+
+ 
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+#include "math.h"
+
+int factorial (int n);
+
+void main(void)
+{
+	int   n,z; 
+	printf("Introduzca numero del que desea saber su factorial:  ");
+	scanf_s("%d",&n);
+	z=factorial(n);
+	printf("\nEl factorial es :  %d",z);
+	_getch();
+}
+int factorial (int n)
+{
+	int fac;
+	fac = 1;
+	for (int i=1; i<=n ; i++)
+	{ 
+		fac = fac * i;
+	}
+	return (fac);
+}
+
