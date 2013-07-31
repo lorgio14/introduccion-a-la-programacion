@@ -1,0 +1,41 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula la potencia de dos numeros reales                    */
+/* entrada: base,exponente													                          */
+/* salida: potencia															                           	  */
+/******************************************************************************/
+
+ 
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+float poten(float x, float y);
+
+void main()
+{float x,y,p;
+ printf("ingrese el numero base");
+ scanf("%f",&x);
+ printf("ingrese el numero exponente");
+ scanf("%f",&y);
+
+ p=poten(x,y);
+
+ printf("la potencia es %f",p);
+
+ printf("\n\n");
+ system("pause");
+  
+}
+
+float poten(float x, float y)
+{float pot=1;
+ for(int i=1;i<=y;i++)
+	{pot=pot*x;
+	}
+ return(pot);
+}
