@@ -1,0 +1,131 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  convierte numero real de 4 cifras a literal								  */
+/* entrada: numero												                                    */
+/* salida: literal											                              	      */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+
+void convertir(float num);
+
+void main(void)
+{
+	float num;
+	do 
+	{
+		printf("Ingrese un numero a convertir : ");
+		scanf("%f",&num);
+
+	}while((num<1)||(num>9999));
+	convertir(num);
+	_getch();
+}
+
+void convertir(float num)
+{	float n1;
+	int aux,dig,dec,cent,mil,centa;
+	n1 = num;
+	aux = int(n1);
+	int aux1,n12;
+	aux1 = aux * 100;
+	n12 = int (n1 * 100);
+ 	centa = n12 - aux1;
+	//centa = int((n1 - aux)*100);
+	mil = int (n1 / 1000);
+
+	switch (mil)
+	{
+		case 1:	printf("Un mil ");
+				break;
+		case 2:	printf("Dos mil ");
+				break;
+		case 3:	printf("tres mil ");
+				break;
+		case 4:	printf("cuatro mil ");
+				break;
+		case 5:	printf("cinco mil ");
+				break;
+		case 6:	printf("seis mil ");
+				break;
+		case 7:	printf("siete mil ");
+				break;
+		case 8:	printf("ocho mil ");
+				break;
+		case 9:	printf("nueve mil ");
+				break;
+	}
+	aux = aux - mil * 1000;
+	cent = int (aux/100);
+	switch (cent)
+	{
+		case 1:	printf("ciento ");
+				break;
+		case 2:	printf("doscientos ");
+				break;
+		case 3:	printf("trescientos ");
+				break;
+		case 4:	printf("cuatroscientos ");
+				break;
+		case 5:	printf("quinientos ");
+				break;
+		case 6:	printf("seiscientos ");
+				break;
+		case 7:	printf("setecientos ");
+				break;
+		case 8:	printf("ochocientos ");
+				break;
+		case 9:	printf("novecientos ");
+				break;
+	}
+	aux = aux - cent * 100;
+	dec = int(aux /10);
+	switch (dec)
+	{
+		case 1:	printf("diez ");
+				break;
+		case 2:	printf("veinte ");
+				break;
+		case 3:	printf("treinta ");
+				break;
+		case 4:	printf("cuarenta ");
+				break;
+		case 5:	printf("cincuenta ");
+				break;
+		case 6:	printf("sesenta ");
+				break;
+		case 7:	printf("setenta ");
+				break;
+		case 8:	printf("ochenta ");
+				break;
+		case 9:	printf("noventa ");
+				break;
+	}
+	dig = aux % 10;
+	switch (dig)
+	{
+		case 1:	printf("un ");
+				break;
+		case 2:	printf("dos ");
+				break;
+		case 3:	printf("tres ");
+				break;
+		case 4:	printf("cuatro ");
+				break;
+		case 5:	printf("cinco ");
+				break;
+		case 6:	printf("seis ");
+				break;
+		case 7:	printf("siete ");
+				break;
+		case 8:	printf("ocho ");
+				break;
+		case 9:	printf("nueve ");
+				break;
+	}
+	printf("%d/100 bolivianos",centa);
+}
