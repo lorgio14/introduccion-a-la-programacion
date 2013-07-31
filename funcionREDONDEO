@@ -1,0 +1,43 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  redondea un número real R a n decimales								      */
+/* entrada: numero											                                      */
+/* salida: numero redondeado										                          	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "conio.h"
+#include "math.h"
+
+float convertir(float num,int deci);
+
+void main(void)
+{
+	float x,num;
+	int deci;
+	printf("Ingrese un numero a redondear : ");
+	scanf("%f",&num);
+	printf("Ingrese el numero de decimales que desea : ");
+	scanf("%d",&deci);
+	x = convertir(num,deci);
+	printf("El numero redondeado es : %f",x);
+	_getch();
+}
+
+float convertir(float num ,int deci )
+{
+	float sol;
+	int dig, aux;
+	aux = int(num *(pow (10.0,deci + 1)));
+	dig = int (aux % 10);
+	if ( dig >= 5)
+	{
+		aux = aux + 1;
+	}
+	sol = float (aux / pow( 10.0,deci+1));
+	return (sol);
+}
+ 
