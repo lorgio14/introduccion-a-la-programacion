@@ -1,0 +1,51 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.    											                          */
+/* fecha:  25/07/13															                              */
+/* descripcion:  calcula la suma de la serie						                      */
+/* entrada: base, exponente													                          */
+/* salida: sumatoria												                              	  */
+/******************************************************************************/
+
+ 
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "math.h"
+
+
+float serie(float base, int expo);
+
+
+void main()
+{
+ int expo;
+ float base,s;
+
+ printf("ingre el numero base");
+ scanf("%f",&base);
+ printf("ingrese el numero exponente");
+ scanf("%d",&expo);
+
+ s=serie(base,expo);
+ printf("la suma es %f",s);
+ printf("\n\n");
+ system("pause");
+
+   
+}
+
+float serie(float base, int expo)
+{int i,fac;
+ float suma=0;
+ fac=1;
+ for(i=1;i<=expo;i++)
+ {fac=fac*i;
+  suma=suma+(pow(base,i))/fac;
+ }
+
+ return(suma);
+}
+
