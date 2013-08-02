@@ -1,0 +1,42 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  calcula peso ideal											  */
+/* entrada: altura															  */
+/* salida: peso ideal								               			  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "math.h"
+void main ()
+{float altura,hombres,mujeres;
+int opcion;
+
+   printf("ingrese su altura en metros:  ");
+   scanf("%f",&altura);
+   printf("\nsi es mujer introduzca el numero: 1\n\nsi es hombres introduzca el numero:2 \n\n");
+   scanf("%d",&opcion);
+    if(opcion==1)
+    {mujeres=(62.1*altura)-44.7;
+	   printf("su peso ideal es: %f \n\n",mujeres );
+	  }
+
+
+	else 
+	  {	if(opcion==2)  
+	     {hombres=(72.7*altura)-58; 
+	      printf("su peso ideal es: %f \n\n",hombres);
+
+	     }
+	  else 
+	   {printf("ingrese una opcion valida\n\n");
+	   }
+	}
+
+
+system("pause");
+
+}
