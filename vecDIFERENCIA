@@ -1,0 +1,53 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  la diferencia más grande entre elementos consecutivos de vec */
+/* entrada: vector con valores											      */
+/* salida: diferencia mas grande						                  	  */
+/******************************************************************************/
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"stdlib.h"
+#define  nMax 100
+
+void cargar (int vec[], int n);
+int diferencia (int vec[],int n);
+
+void main()
+{int n, vec[nMax],d;
+
+printf("ingrese el numero de elementos del vector: ");
+ scanf("%d",&n);
+ cargar(vec,n);
+ d=diferencia(vec,n);
+ printf("\nLa mayor diferencia es de : %d",d);
+
+printf("\n\n");
+ system("pause");
+}
+
+void cargar (int vec[], int n)
+{ int i,precio;
+for(i=0;i<n;i++)
+  {printf("\ningrese vec[%d]:  ",i+1);
+   scanf("%d",&vec[i]);
+  }
+
+}
+int diferencia (int vec[],int n)
+{int dif, may;
+ may=0;
+for(int i=0;i<n-1;i++)
+	{dif=vec[i]-vec[i+1];
+	if(dif<0)
+		{dif=-(dif);
+		}
+	if(dif>may)
+		{may=dif;
+		}
+	}
+return(may);
+}
