@@ -1,0 +1,51 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  promedio de cada tres valores consecutivos en un vector      */
+/* entrada: vector con valores											      */
+/* salida: promedios									                  	  */
+/******************************************************************************/
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"stdlib.h"
+#define  nMax 100
+
+void cargar (float vec[], int n);
+void promedio(float vecA[],float vecB[],int nA, int&nB);
+
+void main()
+{int nA,nB;
+float vecA[nMax],vecB[nMax];
+
+printf("ingrese el numero de elementos del vector: ");
+ scanf("%d",&nA);
+ cargar(vecA,nA);
+ promedio(vecA,vecB,nA,nB);
+
+printf("\n\n");
+ system("pause");
+}
+
+void cargar (float vec[], int n)
+{ int i,precio;
+for(i=0;i<n;i++)
+  {printf("\n\nIngrese vec[%d]:  ",i+1);
+   scanf("%f",&vec[i]);
+  }
+
+}
+void promedio(float vecA[],float vecB[],int nA, int&nB)
+{int i=0;
+ nB=0;
+while(i<nA-2)
+	{vecB[nB]=(vecA[i]+vecA[i+1]+vecA[i+2])/3;
+	nB++;
+	 i++;
+	}
+for(i=0;i<nB;i++)
+	{printf("\n\nvec[%d] => %f",i,vecB[i]);
+	}
+}
