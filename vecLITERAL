@@ -1,0 +1,85 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  devolver el valor escrito literalmente del 1-20		      */
+/* entrada: vector con valores											      */
+/* salida: literal										                  	  */
+/******************************************************************************/
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"stdlib.h"
+#define  nMax 100
+
+void cargar (int vec[], int n);
+void imp_literal(int vec[],int n);
+
+void main()
+{int n, vec[nMax];
+
+printf("ingrese el numero de elementos del vector: ");
+ scanf("%d",&n);
+ cargar(vec,n);
+imp_literal(vec,n);
+
+ printf("\n\n");
+ system("pause");
+}
+
+void cargar (int vec[], int n)
+{ int i,precio;
+for(i=0;i<n;i++)
+  {printf("\ningrese vec[%d]:  ",i+1);
+   scanf("%d",&vec[i]);
+  }
+
+}
+void imp_literal(int vec[],int n)
+{for(int i=0;i<n;i++)
+	{switch(vec[i])
+		{
+		case 1: printf("\n1 uno");
+					break;
+		case 2: printf("\n2 dos");
+				break;
+		case 3: printf("\n3 tres");
+				break;
+		case 4: printf("\n4 cuatro");
+				break;
+		case 5: printf("\n5 cinco");
+				break;
+		case 6: printf("\n6 seis");
+				break;
+		case 7: printf("\n7 siete");
+				break;
+		case 8: printf("\n8 ocho");
+				break;
+		case 9: printf("\n9 nueve");
+				break;
+		case 10: printf("\n10 diez");
+				break;
+		case 11: printf("\n11 once");
+				break;
+		case 12: printf("\n12 doce");
+				break;
+		case 13: printf("\n13 trece");
+				break;
+		case 14: printf("\n14 catorce");
+				break;
+		case 15: printf("\n15 quince");
+				break;
+		case 16: printf("\n16 dieciseis");
+				break;
+		case 17: printf("\n17 diecisiete");
+				break;
+		case 18: printf("\n18 dieciocho");
+				break;
+		case 19: printf("\n19 diecinueve");
+				break;
+		case 20: printf("\n20 veinte");
+				break;
+		}
+	}
+}
