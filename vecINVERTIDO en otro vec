@@ -1,0 +1,62 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  revierte valores de un vector, en otro vector			      */
+/* entrada: vector con valores											      */
+/* salida: vector con valores invertido					                  	  */
+/******************************************************************************/
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"conio.h"
+#define nMax 31
+
+void cargarVec(int vec[nMax],int n);
+void revertir(int vec[nMax],int rev[nMax],int n);
+void mostrarVec(int V[nMax],int n);
+
+
+void main()
+{
+	int n, vec[nMax],rev[nMax];
+	printf("Ingrese cantidad de numeros del vector : ");
+	scanf("%d",&n);
+	cargarVec(vec,n);
+	revertir(vec,rev,n);
+	mostrarVec(rev,n);
+	_getch();
+}
+
+void cargarVec(int vec[nMax],int n)
+{
+	int i,aux;
+	//Cargar el vector de valores iniciales
+	for(i=0;i<n;i++)
+	{
+		printf("\nIngrese Vec[%d] :  ",i+1);
+		scanf("%d",&vec[i]);
+	}
+	
+}
+
+void revertir(int vec[nMax],int rev[nMax],int n)
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		rev[n-i-1] = vec[i];
+	}
+	
+}
+
+void mostrarVec(int V[nMax],int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		printf("Vec[%d] => %d \n",i+1,V[i]);
+	}
+}
