@@ -1,0 +1,40 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  hallar la clave											  */
+/* entrada: numeros															  */
+/* salida: saber si es o no la clave				               			  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+void main ()
+{int clave,i,contador,intento;
+ printf("tiene 3 intentos\n\n");
+ contador=0;
+ intento=3;
+ do
+ { printf("\n\ningrese una contraseña de 4 digitos:  ");
+   scanf("%d",&clave);
+   intento=intento-1;
+   if(clave!=2610)
+     {printf("\nCONTRASEÑA INCORRECTA LE QUEDA %d intentos\n",intento);
+
+      }
+  contador=contador+1;
+
+ }
+while(contador!=3 && clave!=2610);
+   if(clave!=2610)
+   {printf("\n3 intentos fallidos, llamando a seguridad\n\n"); 
+   }
+   else
+   {printf("\nla boveda esta abierta, bienvenido!\n\n\n");
+   
+   }
+system("pause");
+
+}
