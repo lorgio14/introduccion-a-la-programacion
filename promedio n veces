@@ -1,0 +1,33 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  calcula promedio n veces										  */
+/* entrada: n numeros															  */
+/* salida: promedio					               			  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+void main ()
+{float numero,acumulador,promedio,opcion;
+ int i;
+acumulador=0;
+i=0;
+do
+{printf("\ningrese un numero para promediar:");
+scanf("%f",&numero);
+i=i+1;
+acumulador=acumulador+numero;
+promedio=acumulador/i;
+printf("\ndesea continua? si(1), no(2)");
+scanf("%f",&opcion);
+}
+while(opcion==1);
+printf("\n\nel promedio de los %d numeros es: %f \n\n",i,promedio);
+
+system("pause");
+
+}
