@@ -1,0 +1,39 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  determina si un numero es perfecto							  */
+/* entrada: numero															  */
+/* salida: si es o no numero perfecto						               	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "math.h"
+void main ()
+{int numero,aux,acumulador;
+   printf("ingrese un numero: ");
+   scanf("%d",&numero);
+   acumulador=0;
+   aux=1;
+     while(numero>aux)
+	   {
+		   if((numero%aux)==0)
+		     { acumulador=acumulador+aux;
+
+
+		     }
+	    aux=aux+1;
+	   }
+	  if(acumulador==numero)
+        {printf("\nel numero %d es PERFECTO \n\n",numero);
+      
+	    }
+	    else 
+	    {printf("\nel numero %d NO es PERFECTO \n\n",numero);
+	    }
+
+system("pause");
+
+}
