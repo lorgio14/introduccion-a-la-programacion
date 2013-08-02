@@ -1,0 +1,32 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  calcula raiz cuadrada										  */
+/* entrada: numero															  */
+/* salida: raiz cuadrada del numero					               			  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "math.h"
+
+
+void main()
+{float raiz,numero;
+printf("ingrese el numero que del que desea sacar raiz: ");
+scanf("%f",&numero);
+if(numero>0)
+ {raiz=sqrt(numero);
+  printf("\n\nla raiz es igual a: %f\n\n",raiz);
+ }
+
+else
+
+{printf("\nRAIZ IMAGINARIA\n\n");
+}
+
+system("pause");
+
+}
