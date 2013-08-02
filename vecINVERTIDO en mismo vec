@@ -1,0 +1,65 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  revertir una lista en el mismo vector						  */
+/* entrada: vector cargado													  */
+/* salida: vector 							               	  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#define  nMax 100
+
+void cargar (int vec[nMax], int n);
+void revertir(int vec[nMax], int n);
+void mostrar(int vec[nMax], int n);
+
+void main()
+{
+	int n, vec[nMax];
+
+	printf("ingrese el numero de elementos del vector: ");
+	scanf("%d",&n);
+	cargar(vec,n);
+	revertir(vec,n);
+	mostrar(vec,n);
+
+	printf("\n\n");
+	system("pause");
+}
+
+void cargar (int vec[nMax], int n)
+{ 
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("\n\nIngrese vec[%d]:  ",i+1);
+		scanf("%d",&vec[i]);
+	}
+}
+
+void revertir(int vec[nMax], int n)
+{
+	int aux;
+	int medio = int(n/2);
+	for(int i=0;i<medio;i++)
+	{
+		aux = vec[i];
+		vec[i] = vec[n-i-1];
+		vec[n-i-1] = aux;
+	}
+	
+}
+
+void mostrar(int vec[nMax], int n)
+{
+	int i;
+	printf("\n********VECTOR INVERTIDO********\n");
+	for(i=0;i<n;i++)
+		{
+			printf("\n\n vec[%d] => %d",i+1,vec[i]);
+		}
+}
+
