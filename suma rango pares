@@ -1,0 +1,46 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  suma de los numeros pares en un rango						  */
+/* entrada: numero de inicio y fin											  */
+/* salida: sumatoria								               			  */
+/******************************************************************************/
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+void main ()
+{int inicio, fin,suma,numero,final;
+ printf("\ningrese el numero que inicia el rango:  ");
+ scanf("%d",&inicio);
+ printf("\ningrese el numero que termina el rango:  ");
+ scanf("%d",&fin);
+ numero=inicio;
+ suma=0;
+ final=fin;
+ if(fin%2==0)
+ {while(numero!=final)
+  {numero=numero+1;
+    if(numero%2==0)
+  {suma=suma+numero;
+	}
+   
+  }
+ printf("\nla suma del rango es: %d \n\n", suma-final	);
+ }
+ else
+   { while(numero!=final)
+    {numero=numero+1;
+    if(numero%2==0)
+	{suma=suma+numero;
+	}
+   
+  }
+ printf("\nla suma del rango es: %d \n\n", suma);
+ 
+ }
+system("pause");
+
+}
