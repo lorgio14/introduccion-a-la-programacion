@@ -1,0 +1,87 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  intercalar dos vectores en un tercer vetor					  */
+/* entrada: dos vectores cargados										      */
+/* salida: vector intercalado							                  	  */
+/******************************************************************************/
+
+
+#include "stdafx.h"
+#include "stdio.h"
+#include "stdlib.h"
+#define  nMax 100
+
+void cargar (int vec[], int n);
+void mezcla (int vecA[],int nA, int vecB[], int nB, int vecC[], int &nC);
+void mostrar(int vecC[],int nC);
+
+void main()
+{
+	int nA, nB, vecA[nMax],vecB[nMax],vecC[nMax], nC;
+
+	printf("\ningrese el numero de elementos del primer vector: ");
+	scanf("%d",&nA);
+	cargar(vecA,nA);
+	printf("\ningrese el numero de elementos del segundo vector: ");
+	scanf("%d",&nB);
+	cargar(vecB,nB);
+	mezcla(vecA,nA,vecB,nB,vecC,nC);
+	mostrar(vecC,nC);
+	printf("\n\n");
+	system("pause");
+}
+
+void cargar (int vec[], int n)
+{ int i,precio;
+  for(i=0;i<n;i++)
+  {printf("\ningrese vec[%d]:  ",i+1);
+   scanf("%d",&vec[i]);
+  }
+
+}
+void mezcla (int vecA[],int nA, int vecB[], int nB, int vecC[], int &nC)
+{
+	int iA,iB,iC,i,j;
+	nC=0;	 
+	iA=0;
+	iB=0;
+	nC=0;
+	while((iA<nA)&&(iB<nB))
+	{
+		if(vecB[iB]<vecA[iA]){
+			vecC[nC]=vecB[iB];
+			iB++;
+		}
+		else
+		{
+			vecC[nC]=vecA[iA];
+			iA++;
+		}
+		nC++;
+	}
+	if(iB<nB)
+	{
+		for(j=iB;j<nB;j++){
+			vecC[nC]=vecB[j];
+			nC++;
+		}
+	}
+	else
+	{
+		for(j=iA;j<nA;j++)
+		{
+			vecC[nC]=vecA[j];
+			nC++;
+		}
+	}
+
+}
+void mostrar(int vecC[],int nC)
+{
+	for(int i=0;i<nC;i++)
+		{
+			printf("\nvec[%d] => %d",i,vecC[i]);
+		}
+}
