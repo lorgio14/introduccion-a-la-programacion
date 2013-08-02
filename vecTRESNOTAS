@@ -1,0 +1,92 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  Hacer un programa para obtener las tres mejores notas		  */
+/* entrada: notas y alumnos													  */
+/* salida: 3 mejores notas									               	  */
+/******************************************************************************/
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"conio.h"
+#include<string.h>
+#define nMax 31
+struct nombre
+{
+	char nom[30];
+};
+
+void cargarVec(nombre A[nMax],int B[nMax],int n);
+void ordenarNomNotaDescen(nombre A[nMax],int B[nMax],int n);
+void imprimir3Nota(nombre A[nMax],int B[nMax],int n);
+void mostrarVec(nombre A[nMax],int B[nMax],int n);
+
+void main()
+{
+	int n, B[nMax];
+	nombre A[nMax];
+	printf("Ingrese cantidad de numeros del vector : ");
+	scanf("%d",&n);
+	cargarVec(A,B,n);
+	imprimir3Nota(A,B,n);
+	//mostrarVec(A,B,n);
+	_getch();
+}
+
+void cargarVec(nombre A[nMax],int B[nMax],int n)
+{
+	int i;
+	//Cargar el vector de valores iniciales
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d Alumno : ",i+1);
+		scanf("%s",&A[i].nom);
+		printf("\n%d Nota   : ",i+1);
+		scanf("%d",&B[i]); 
+	}
+	
+}
+void imprimir3Nota(nombre A[nMax],int B[nMax],int n)
+{
+	ordenarNomNotaDescen(A,B,n);
+	int i,j,aux;
+	for(i=0;i<3;i++)
+	{
+		printf("\n%d  %s    %d",i+1,A[i].nom,B[i]);	
+	}
+}
+
+void mostrarVec(nombre A[nMax],int B[nMax],int n)
+{
+	int i,aux;
+	//Cargar el vector de valores iniciales
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d  %s    %d",i+1,A[i].nom,B[i]); 
+	}
+}
+
+void ordenarNomNotaDescen(nombre A[nMax],int B[nMax],int n)
+{
+	int i,j,aux;
+	char aux1[30];
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-1;j++)
+		{
+			if (B[j] < B[j+1])
+			{
+				aux = B[j];
+				B[j] = B[j+1];
+				B[j+1] = aux;
+				
+				strcpy(aux1,A[j].nom);
+				strcpy(A[j].nom,A[j+1].nom);
+				strcpy(A[j+1].nom,aux1);
+			}
+		}
+	}
+}
+ 
