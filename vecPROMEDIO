@@ -1,0 +1,56 @@
+/******************************************************************************/
+/* materia: introduccion a la programacion                                    */  
+/* nombre: Lorgio Campos S.      										      */
+/* fecha:  1/08/13															  */
+/* descripcion:  calcula el promedio de valores de un vector	              */
+/* entrada: vector con valores											      */
+/* salida: promedio										                  	  */
+/******************************************************************************/
+
+
+
+#include"stdafx.h"
+#include"stdio.h"
+#include"conio.h"
+#define nMax 31
+
+void cargarVec(int vec[nMax],int n);
+float calculoProme(int vec[nMax],int n);
+
+
+void main()
+{
+	int n, vec[nMax];
+	float x;
+	printf("Ingrese cantidad de numeros del vector : ");
+	scanf("%d",&n);
+	cargarVec(vec,n);
+	x=calculoProme(vec,n);
+	printf("El promedio es : %f  ",x);
+	_getch();
+}
+
+void cargarVec(int vec[nMax],int n)
+{
+	int i,aux;
+	//Cargar el vector de valores iniciales
+	for(i=0;i<n;i++)
+	{
+		printf("\nIngrese Vec[%d] :  ",i+1);
+		scanf("%d",&vec[i]);
+	}
+	
+}
+
+float calculoProme(int vec[nMax],int n)
+{
+	int suma,i;
+	float prom;
+	suma = 0;
+	for (i = 0; i < n; i++)
+	{
+		suma = suma + vec[i];
+	}
+	prom = suma / n;
+	return (prom);
+}
