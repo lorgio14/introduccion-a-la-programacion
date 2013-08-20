@@ -1,0 +1,50 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+using namespace std;
+
+int promedionumerosprimos(int n);
+
+void main()
+{int n;
+ float x;
+
+ cout<<"introducir cantidad de numeros: ";
+ cin>>n;
+ x=promedionumerosprimos(n);
+ cout<<"el promedio de los numeros primo es: "<<x;
+ getch();
+}
+
+
+int promedionumerosprimos(int n)
+{int num,i,j,contador,aux,suma;
+ float p;
+ contador=0;
+ aux=0;
+ suma=0;
+ for(i=0;i<n;i++)
+	{
+		cout<<"introducir numero: ";
+	    cin>>num;
+		for(j=1;j<=num;j++)
+			{
+				if(num%j==0)
+				{
+					contador++;
+				}
+			}
+		j=1;
+		if(contador<=2)
+			{
+				suma=suma+num;
+				aux++;
+			}
+		contador=0;
+	}
+ if(aux>0)
+	{
+		p=suma/aux;
+	}
+ return(p);
+}
