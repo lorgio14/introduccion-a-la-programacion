@@ -1,0 +1,96 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+using namespace std;
+
+
+
+
+void cargar(int vec[],int n);
+void mostrar(int vec[],int n);
+void eliminarimpares(int vec[],int &n);
+void eliminarmayor(int vec[],int &n);
+
+
+void main()
+{int vec[50],n,opcion;
+cout<<"introducir elementos del vector: ";
+ cin>>n;
+ do
+ {
+	 cout<<endl<<"\n\n*******MENU VECTORES*******";
+	 cout<<endl<<"1.- cargar";
+	 cout<<endl<<"2.- mostrar";
+	 cout<<endl<<"3.- eliminar impares";
+	 cout<<endl<<"4.- eliminar mayor";
+	 cout<<endl<<"0.- salir";
+	 cout<<endl<<"seleccionar opcion: ";
+	 cin>>opcion;
+ 
+	switch(opcion)
+	{
+	case 1: cargar(vec,n);
+		break;
+	case 2: mostrar(vec,n);
+		break;
+	case 3: eliminarimpares(vec,n);
+		break;
+	case 4: eliminarmayor(vec,n);
+		break; 
+
+	}
+ }while(opcion != 0);
+ 
+ getch();
+}
+
+void cargar(int vec[],int n)
+{int i;
+ for(i=0;i<n;i++)
+	{
+		cout<<"vec"<<i+1<<": ";
+		cin>>vec[i];
+	}
+}
+void mostrar(int vec[],int n)
+{int i;
+ for(i=0;i<n;i++)
+	{
+		cout<< endl << "vec["<<i+1<<"]: "<<vec[i];
+	}
+}
+void eliminarimpares(int vec[],int &n)
+{int i,k;
+ for(i=0;i<n;i++)
+	{if(vec[i]%2!=0)
+		{
+			for(k=i;k<n-1;k++)
+				{
+					vec[k]=vec[k+1];
+				}
+			n--;
+			i--;
+		}
+	}
+}
+
+void eliminarmayor(int vec[],int &n)
+{int i,k,mayor;
+ mayor=vec[0];
+ for(i=0;i<n;i++)
+ {if(vec[i]>mayor)
+	{
+		mayor=vec[i];
+	}
+ }
+ for(i=0;i<n;i++)
+ {if(vec[i]==mayor)
+	{for(k=i;k<n-1;k++)
+		{
+			vec[k]=vec[k+1];
+		}
+	  n--;
+	  i--;
+	}
+ }
+}
