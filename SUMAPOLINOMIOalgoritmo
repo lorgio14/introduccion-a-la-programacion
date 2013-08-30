@@ -1,0 +1,76 @@
+#include "conio.h"
+#include <math.h>
+#include "iostream"
+using namespace std;
+
+void cargar(int coef[], int expo[], int nroterm)
+{int i;
+ for(i=0;i<nroterm;i++)
+	{
+		cout<<"\n\nIntroducir termino: "<<i+1<<"----->>>>: \n";
+		cout<<"\tCoeficiente ? : ";
+		cin>>coef[i];
+		cout<<"\tExponente ? : ";
+		cin>>expo[i];
+	}
+}
+
+void mostrar(int coef[], int expo[], int nroterm)
+{int i;
+ for(i=0;i<nroterm;i++)
+	{if(i!=0)
+		{if(coef[i]>0)
+			{
+				cout<<" + ";
+			}
+		else
+			{
+				cout<<"  ";
+			}
+		}
+		cout<<coef[i];
+		if(expo[i]>0)
+			{
+				cout<<"X^"<<expo[i];
+			}
+	}
+}
+void sumarpolis(int coef1,int expo1,int nroterm1,
+				int coef2,int expo2,int nroterm2,
+				int coef3,int expo3,int &nroterm3)
+{int i,j,k;
+ nroterm3=nroterm3+nroterm1;
+ for(i=0;i<nroterm1;i++)
+	{ for(k=0;k<nroterm3;k++)
+		{
+			coef3[k]= coef1[i];
+			expo3[k]= expo1[i];
+		}
+	}
+ for(j=0;j<nroterm2;j++)
+	{for(k=0;k<nroterm3;k++)
+		{if(expo2==expo3)
+			{coef3[i]=coef3[i]+coef2[i];
+			}
+		else
+			{
+			}
+		}
+	}
+}
+
+void main()
+{int coef1[20], expo1[20],coef2[20], expo2[20],coef3[20], expo3[20], nroterm1,nroterm2,nroterm3=0;
+ cout<<"\nNro de terminos del primer polinomio: ";
+ cin>>nroterm1;
+ cargar(coef1,expo1,nroterm1);
+ cout<<"\nNro de terminos del segundo polinomio: ";
+ cin>>nroterm2;
+ cargar(coef2,expo2,nroterm2);
+ sumarpolis(coef1,expo1,nroterm1,coef2,expo2,nroterm2,coef3,expo3,nroterm3);
+ 
+ mostrar(coef1,expo1,nroterm1);
+ mostrar(coef2,expo2,nroterm2);
+ getch();
+}
+
