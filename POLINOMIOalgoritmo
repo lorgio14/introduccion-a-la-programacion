@@ -1,0 +1,58 @@
+#include "conio.h"
+#include <math.h>
+#include "iostream"
+using namespace std;
+
+void cargar(int coef[], int expo[], int nroterm)
+{int i;
+ for(i=0;i<nroterm;i++)
+	{
+		cout<<"\n\nIntroducir termino: "<<i+1<<"----->>>>: \n";
+		cout<<"\tCoeficiente ? : ";
+		cin>>coef[i];
+		cout<<"\tExponente ? : ";
+		cin>>expo[i];
+	}
+}
+
+void mostrar(int coef[], int expo[], int nroterm)
+{int i;
+ for(i=0;i<nroterm;i++)
+	{if(i!=0)
+		{if(coef[i]>0)
+			{
+				cout<<" + ";
+			}
+		else
+			{
+				cout<<"  ";
+			}
+		}
+		cout<<coef[i];
+		if(expo[i]>0)
+			{
+				cout<<"X^"<<expo[i];
+			}
+	}
+}
+int resolver(int coef[], int expo[], int nroterm, int x)
+{int i,s=0;
+ for(i=0;i<nroterm;i++)
+	{s=s+(coef[i]*(powf(x,expo[i])));
+	}
+ return(s);
+}
+
+void main()
+{int coef[20], expo[20], nroterm,x,y;
+ cout<<"\nNro de terminos del polinomio: ";
+ cin>>nroterm;
+ cargar(coef,expo,nroterm);
+ mostrar(coef,expo,nroterm);
+ cout<<"\n\nValor para X: ";
+ cin>>x;
+ y=resolver(coef,expo,nroterm,x);
+ cout<<"\nel resultado es: "<<y;
+ getch();
+}
+
