@@ -1,0 +1,63 @@
+#include "conio.h"
+#include "iostream"
+using namespace std;
+
+struct regalumno
+{char nombrealum[30];
+ char sexo[30];
+ int nota;
+};
+struct regcurso
+{char nombrecurso[30];
+ int nroalumno;
+ regalumno listalumno[20];
+};
+struct regciclo
+{char nombreciclo[20];
+ int nrocurso;
+ regcurso listacurso[20];
+};
+
+void cargar(regciclo colegio[], int nrociclos)
+{int i,j,k;
+ for(i=0;i<nrociclos;i++)
+	{cout<<"\n\nnombre del ciclo";
+	 do
+	 {gets(colegio[i].nombreciclo);
+	 }while(strlen(colegio[i].nombreciclo)==0);
+	 cout<<"\n\nro de cursos";
+	 cin>>colegio[i].nrocurso;
+		for(j=0;j<colegio[i].nrocurso;j++)
+		{cout<<"\n\nnombre del curso";
+		do
+		{gets(colegio[i].listacurso[j].nombrecurso);
+		}while(strlen(colegio[i].listacurso[j].nombrecurso)==0);
+			 cout<<"\n\nro de alumnos";
+			 cin>>colegio[i].listacursos[j].nroalumno;
+			for(k=0;k<colegio[i].listacursos[j].nroalumno;k++)
+				{cout<<"\n\nnombre del alumno";
+				 do
+				 {gets(colegio[i].listacursos[j].nombrealumno);
+				 }while(strlen(colegio[i].listacursos[j].nombrealumno));
+				 cout<<"\n\nsexo";
+				 cin>>colegio[i].listacursos[j].listalumno[k].sexo;
+				 cout<<"\n\nnota";
+				 cin>>colegio[i].listacursos[j].listalumno[k].nota;
+				}
+
+	 }
+	}
+}
+
+void main()
+{int nrociclos;
+ regciclo colegio[5];
+ cout<<"introducir el numero de ciclo del colegio";
+ cin>>nrociclos;
+ cargar(colegio,nrociclos);
+
+ getch();
+
+ 
+}
+
