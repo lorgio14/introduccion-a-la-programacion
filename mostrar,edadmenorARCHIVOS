@@ -1,0 +1,134 @@
+#include "conio.h"
+#include "stdio.h"
+#include "iostream"
+#include "iomanip"
+#include "string.h"
+using namespace std;
+
+struct regamigos
+{char nombre[30];
+ int edad;
+ char email[80];
+ char estado;
+ char carrera[30];
+};
+
+void main()
+{		int a,c,edmin;
+		char nommin[30];
+		c=0,a=0;
+		edmin=1000;
+        FILE *ptr;
+        regamigos reg;
+		ptr=fopen("amigos.dat","rb");
+		if(ptr==NULL)
+			{cout<<"el archivo no existe";
+			}
+		else
+			{cout<<left;
+			 cout<<endl<<setw(60)<<"==============================================================";
+			 cout<<endl<<setw(60)<<"                       LISTADO DE AMIGOS                      ";
+			 cout<<endl<<setw(60)<<"==============================================================";
+			 cout<<endl<<setw(60)<<"      NOMBRE                 EDAD         EMAIL";
+			 cout<<endl<<setw(60)<<"--------------------------------------------------------------";
+
+			 fread(&reg,sizeof(reg),1,ptr);
+				while(!feof(ptr))
+					{if(reg.estado=='N')
+						{
+							cout<<endl<<setw(30)<<reg.nombre<<setw(4)<<reg.edad<<setw(30)<<reg.email;
+							a = a + reg.edad;
+							c++;
+							if(edmin>reg.edad)
+								{edmin=reg.edad;
+								}
+						}
+					 fread(&reg,sizeof(reg),1,ptr);
+					}
+			}
+      
+		if(c>0)
+			{cout<<endl<<setw(60)<<"--------------------------------------------------------------";
+			 cout<<endl<<setw(40)<<"El promedio de edad es ----->>>> :      "<<a/c;
+			}
+		cout<<endl<<setw(60)<<"==============================================================";
+		cout<<endl<<setw(40)<<"La edad menor es ----->>>> :    "<<edmin;
+		rewind(ptr);
+		fread(&reg,sizeof(reg),1,ptr);
+		while(!feof(ptr))
+			{if(reg.estado=='N')
+				{if(reg.edad==edmin)
+					{cout<<endl<<setw(40)<<"Nombre es ----->>>> :    "<<reg.nombre;
+					}
+				}
+			fread(&reg,sizeof(reg),1,ptr);
+			}
+		cout<<endl<<setw(60)<<"==============================================================";
+
+        getch();
+}
+
+
+/*
+void main()
+{
+        FILE *ptr;
+        regamigos reg;
+        int op,op2;
+        char nombrearchivo[30],modo[5];
+        cout<<"nombre del archivo a trabajar: ";
+        do
+        {
+                gets(nombrearchivo);
+
+        }while(strlen(nombrearchivo)==0);
+
+        strcat(nombrearchivo,".dat");
+
+        cout<<endl<<"1.-crear archivo";
+        cout<<endl<<"2.-adicionar registros al archivo";
+        cout<<endl<<"seleccionar opcion: ";
+        cin>>op;
+        if(op==1)
+                strcpy(modo,"wb");
+        else
+                strcpy(modo,"ab");
+
+        cout<<"nombre?: ";
+        do
+        {
+                gets(reg.nombre);
+        }while(strlen(reg.nombre)==0);
+        cout<<"edad?: ";
+        cin>>reg.edad;
+        cout<<"email?: ";
+        do
+        {
+                gets(reg.email);
+        }while(strlen(reg.email)==0);
+        reg.estado='N';
+        do
+        {
+        cout<<endl<<"1.-ingenieria Sistema";
+        cout<<endl<<"2.-ingenieria Industrial";
+        cout<<endl<<"3.-ingenieria Petrolera";
+        cout<<endl<<"4.-ingenieria Electronica";
+        cout<<endl<<"seleccionar carrera: ";
+        cin>>op2;
+        
+        if(op2==1)
+                strcpy(reg.carrera,"ingenieria Sistema");
+        if(op2==2)
+                strcpy(reg.carrera,"ingenieria Industrial");
+        if(op2==3)
+                strcpy(reg.carrera,"ingenieria Petrolera");
+        if(op2==4)
+                strcpy(reg.carrera,"ingenieria Electronica");
+        }while((op2<0)||(op2>4));
+
+        ptr=fopen(nombrearchivo,modo);
+        if(modo)
+        fwrite(&reg,sizeof(reg),1,ptr);
+        fclose(ptr);
+        getch();
+}*/
